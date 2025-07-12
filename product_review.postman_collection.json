@@ -159,7 +159,7 @@
 			"name": "Product",
 			"item": [
 				{
-					"name": "list products",
+					"name": "Add Product by admin",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -315,6 +315,69 @@
 								""
 							]
 						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "prodcut del,update by admin",
+			"item": [
+				{
+					"name": "product delete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/products/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product update",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}

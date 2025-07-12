@@ -3,11 +3,13 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.exceptions import PermissionDenied
 from .models import Product, ProductReview
 from .serializers import ProductSerializer, ProductReviewSerializer
+from .permissions import IsOwnerOrAdmin  
+from .permissions import IsAdminForUpdateDelete  
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = [IsAuthenticated]  # Only authenticated users, extra check in logic if needed
+    permission_classes = [IsAuthenticated, IsAdminForUpdateDelete]
 
 class ProoductReviewViewSet(viewsets.ModelViewSet):
     queryset = ProductReview.objects.all()
