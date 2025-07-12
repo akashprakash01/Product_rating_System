@@ -11,5 +11,9 @@ Django REST Framework project with custom User (role-based), Products, ProductRe
 8. python manage.py createsuperuser
 9. python manage.py runserver
 
+API endpoints:
+/api/users/
+/api/products/
+/api/reviews/
 
 
