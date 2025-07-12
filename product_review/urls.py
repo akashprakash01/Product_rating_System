@@ -38,6 +38,7 @@ def custom_api_root(request, format=None):
         'login': request.build_absolute_uri('/api/login/')    })
 urlpatterns = [
    path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),  
     path('api/login/', obtain_auth_token),  
 ]
 
