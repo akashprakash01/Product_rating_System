@@ -19,9 +19,13 @@ from django.urls import path, include
 from rest_framework import routers
 from rest_framework.routers import DefaultRouter
 from users.views import UserViewSet
+from products.views import ProductViewSet, ProoductReviewViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'products', ProductViewSet)
+router.register(r'product_reviews', ProoductReviewViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
